@@ -40,6 +40,8 @@ export async function writeComments(
       repo: context.repo,
       owner: context.owner,
       pull_number: context.pullRequest.number,
+      commit_id: context.pullRequest.commit_id,
+      path: comment.matches[0],
       body: body,
       position: 1
     });
