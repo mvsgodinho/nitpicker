@@ -48,8 +48,6 @@ async function run() {
       updateComments(octokit, targetState.commentsToUpdate),
       resolveComments(octokit, targetState.commentsToResolve)
     ]);
-
-    
     console.log('test');
 
     if (targetState.conclusion !== 'success') {
