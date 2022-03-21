@@ -40,6 +40,7 @@ async function run() {
     const eventName = process.env.GITHUB_EVENT_NAME;
 
     const changes: Change[] = await getChangedFiles(octokit, eventName);
+    core.debug(`New changes: ${changes}`);
     const targetState = await getTargetState(octokit, comments, changes);
 
     await Promise.all([
