@@ -64,7 +64,7 @@ async function getChangesFromPR(octokit: github.GitHub): Promise<Change[]> {
   });
   core.debug(
     'New changes from PR:\n' + JSON.stringify(listFilesResponse, null, 4)
-    );
+  );
 
   const changes = listFilesResponse.data.map(f => ({
     file: f.filename,
