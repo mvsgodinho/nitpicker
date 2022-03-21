@@ -36,11 +36,12 @@ export async function writeComments(
       context.repo
     );
 
-    await octokit.issues.createComment({
+    await octokit.pulls.createReviewComment({
       repo: context.repo,
       owner: context.owner,
-      issue_number: context.pullRequest.number,
-      body: body
+      pull_number: context.pullRequest.number,
+      body: body,
+      position: 1
     });
   }
 }

@@ -49,6 +49,9 @@ async function run() {
       resolveComments(octokit, targetState.commentsToResolve)
     ]);
 
+    
+    console.log('test');
+
     if (targetState.conclusion !== 'success') {
       core.setFailed(
         'nitpicker has failed due to blocking comments being applied'
