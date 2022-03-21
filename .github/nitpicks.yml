@@ -5,7 +5,7 @@
 - markdown: |
     Are you _sure_ you want to be console logging or debuggering here?? :trollface:
   pathFilter:
-    - 'src/**'
+    - 'sample/**'
   contentFilter:
     - '(\+\s*console.log\(.*\))'
     - '(\+\s*debugger)'
