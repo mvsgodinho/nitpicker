@@ -41,7 +41,6 @@ async function run() {
 
     const changes: Change[] = await getChangedFiles(octokit, eventName);
     core.debug('New changes:\n' + JSON.stringify(changes, null, 4));
-    
     const targetState = await getTargetState(octokit, comments, changes);
 
     await Promise.all([
