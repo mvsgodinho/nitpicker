@@ -35,6 +35,7 @@ async function getChangesFromSha(octokit: github.GitHub): Promise<Change[]> {
     head: afterSha,
     mediaType: { format: 'sha' }
   });
+  core.debug('New changes from sha:\n' + JSON.stringify(changedFiles, null, 4));
 
   const changes: Change[] = changedFiles.data.files.map(f => ({
     file: f.filename,
@@ -61,6 +62,7 @@ async function getChangesFromPR(octokit: github.GitHub): Promise<Change[]> {
     repo: github.context.repo.repo,
     pull_number: pullRequest.number
   });
+  core.debug('New changes from PR:\n' + JSON.stringify(listFilesResponse, null, 4));
 
   const changes = listFilesResponse.data.map(f => ({
     file: f.filename,
