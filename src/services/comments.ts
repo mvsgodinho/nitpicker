@@ -36,7 +36,7 @@ export async function writeComments(
       context.repo
     );
 
-    await octokit.pulls.createReviewComment({
+    await octokit.pulls.createComment({
       repo: context.repo,
       owner: context.owner,
       pull_number: context.pullRequest.number,
