@@ -145,7 +145,7 @@ export async function getExistingComments(
   });
 
   core.debug('Existing comments:\n' + JSON.stringify(comments.data, null, 4));
-  
+
   return comments.data
     .filter(c => c.user.login === Constants.Author)
     .map(c => ({
