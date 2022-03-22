@@ -144,6 +144,7 @@ export async function getExistingComments(
     issue_number: context.pullRequest.number
   });
 
+  core.debug('Existing comments:\n' + JSON.stringify(comments.data, null, 4));
   return comments.data
     .filter(c => c.user.login === Constants.Author)
     .map(c => ({
